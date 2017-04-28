@@ -1,0 +1,3 @@
+rootProject.name = 'bananapedia'
+
+include ':app'
