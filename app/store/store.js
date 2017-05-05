@@ -1,17 +1,21 @@
 import { createStore } from 'redux'
 
-export const router = (state = 'NEWS', action) => {
+const initState = {
+  selectedTab: 'NEWS'
+}
+
+export const footControl = (state = initState, action) => {
   switch (action.type) {
   case 'NEWS':
-    return 'NEWS'
+    return {selectedTab: 'NEWS'};
   case 'VIDEOS':
-    return 'VIDEOS';
+    return {selectedTab: 'VIDEOS'};
   case 'OTHERS':
-    return 'OTHERS';
+    return {selectedTab: 'OTHERS'};
   }
   return state;
 }
 
-let store = createStore(router);
+let store = createStore(footControl);
 
 export default store;

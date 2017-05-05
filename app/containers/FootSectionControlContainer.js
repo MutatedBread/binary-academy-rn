@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
-import FootSectionControl from '../components/FootSectionControl.js';
+import FootSectionControl from './../components/navigators/footSection/FootSectionControl.js';
 
 const mapStateToProps = state => ({
-  selectedTab: state
+  selectedTab: state.selectedTab
 })
 
 const mapDispatchToProps = (dispatch) => ({
