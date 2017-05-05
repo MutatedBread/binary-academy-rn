@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import { 
-    StackNavigator,
+    TabNavigator,
     NavigationActions
 } from 'react-navigation';
 
@@ -9,7 +9,7 @@ import News from './views/News'
 import Videos from './views/Videos'
 import Others from './views/Others'
 
-const AppNavigator = StackNavigator({
+const AppNavigator = TabNavigator({
     NEWS: {
         screen: News
     },
@@ -20,8 +20,11 @@ const AppNavigator = StackNavigator({
         screen: Others
     }
 }, {
+    backBehavior: 'none',
+    swipeEnabled: false,
+    animationEnabled: true,
     initialRouteName: 'NEWS',
-    headerMode: 'none',
+    tabBarPosition: 'bottom'
 });
 
 export default class Router extends Component{
@@ -32,6 +35,11 @@ export default class Router extends Component{
     navigate = (route) => {
         const navigateAction = 
         this.navigation.dispatch(
+            NavigationActions.navigate({ routeName: route})
+        )
+        /*
+        const navigateAction = 
+        this.navigation.dispatch(
             NavigationActions.reset({
                 index: 0,
                 actions: [
@@ -39,23 +47,27 @@ export default class Router extends Component{
                 ]
             })
         )
+        */
     }
 
     render(){
         News.navigationOptions = {
-            title: 'News',
+            tabLabel: 'News',
+            tabBarVisible: false,
         }
 
         Videos.navigationOptions = {
-            title: 'Videos',
+            tabLabel: 'Videos',
+            tabBarVisible: false,
         }
 
         Others.navigationOptions = {
-            title: 'Others',
+            tabLabel: 'Others',
+            tabBarVisible: false,
         }
 
         return (
-            <AppNavigator ref={(ref) => this.navigation = ref}/>
+            <AppNavigator ref={(ref) => this.navigation = ref} />
         );
     }
 }

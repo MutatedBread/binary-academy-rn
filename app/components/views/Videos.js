@@ -11,13 +11,14 @@ import {
     Header,
     Tabs,
     Tab,
-    ScrollableTab
+    ScrollableTab,
+    Text
 } from 'native-base'
 
 const Videos = (props) => {
    return (
     <Container>
-        <Header style={{backgroundColor: '#2a3052'}} hasTabs={true}>
+        <Header hasTabs={true}>
             <Body>
                 <Title>Videos</Title>
             </Body>
@@ -30,12 +31,16 @@ const Videos = (props) => {
                 />
             </Tab>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Commodities Corner">
+                <Text> asdasd </Text>
             </Tab>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Webinars">
+                <Text> asdasd </Text>
             </Tab>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="How To Use Binary.com">
+                <Text> asdasd </Text>
             </Tab>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Weekly Trading Signals">
+                <Text> asdasd </Text>
             </Tab>
         </Tabs>
     </Container>

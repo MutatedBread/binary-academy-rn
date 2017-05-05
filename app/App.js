@@ -1,16 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 import {
-    BackHandler
-} from 'react-native'
+    BackHandler,
+} from 'react-native';
 
 import {
     Container,
     StyleProvider,
     Body,
-    Title,
-    Toast
-} from 'native-base'
+    Title
+} from 'native-base';
+
+import Toast from 'react-native-simple-toast';
 
 import { Provider } from 'react-redux';
 import { connect } from 'react-redux';
@@ -22,16 +23,22 @@ import commonColor from './../theme/variables/commonColor';
 
 export default class App extends Component{
     render() {
+        var backButtonPressed = false;
+
         var unsubscribe = store.subscribe(() => {
             this.router.navigate(store.getState());
         });
 
         BackHandler.addEventListener('hardwareBackPress', () => {
-            Toast.show({
-                text: 'Press back once more to exit the app.',
-                position: 'bottom',
-                duration: 2000
-            });
+            if(!this.backButtonPressed){
+                Toast.show("Press back once more to exit the app.", 1500);
+                this.backButtonPressed = true;
+                setTimeout(() => {
+                    this.backButtonPressed = false;
+                }, 1500);
+            }else{
+                BackHandler.exitApp();
+            }
             return true;
         });
 

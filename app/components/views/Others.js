@@ -16,7 +16,7 @@ import {
 const Others = (props) => {
    return (
     <Container>
-        <Header style={{backgroundColor: '#2a3052'}} hasTabs={true}>
+        <Header hasTabs={true}>
             <Body>
                 <Title>Others</Title>
             </Body>
