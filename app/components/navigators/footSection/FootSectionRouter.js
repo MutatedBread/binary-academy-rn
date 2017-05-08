@@ -34,17 +34,20 @@ export default class FootSectionRouter extends Component{
         super(props);
     }
 
-    navigate = (route) => {
-        this.navigation.dispatch(
-            NavigationActions.navigate({ routeName: route })
-        )
+    componentDidMount() {
+        this.unsubscribe = store.subscribe(() => {
+            console.log(store.getState().selectedTab);
+            this.navigation.dispatch(
+                NavigationActions.navigate({ routeName: store.getState().selectedTab })
+            )
+        });
     }
 
-    render(){
-        var unsubscribe = store.subscribe(() => {
-            this.navigate(store.getState().selectedTab);
-        });
+    componentWillUnmount() {
+        this.unsubscribe();
+    }
 
+    render() {
         News.navigationOptions = {
             tabLabel: 'News',
             tabBarVisible: false,
@@ -61,7 +64,7 @@ export default class FootSectionRouter extends Component{
         }
 
         return (
-            <FootSectionNav ref={(ref) => this.navigation = ref} />
+            <FootSectionNav ref={ref => this.navigation = ref} />
         );
     }
 }
