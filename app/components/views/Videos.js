@@ -1,18 +1,22 @@
 import React, { Component } from 'react'
 
 import {
-   ActivityIndicator
-} from 'react-native'
-
-import {
     Container,
     Body,
+    Right,
     Title,
     Header,
     Tabs,
     Tab,
     ScrollableTab,
-    Text
+    Text,
+    Button,
+    Card,
+    Icon,
+    CardItem,
+    Content,
+    List,
+    ListItem,
 } from 'native-base'
 
 const Videos = (props) => {
@@ -25,13 +29,117 @@ const Videos = (props) => {
         </Header>
         <Tabs tabBarUnderlineStyle={{backgroundColor: '#e98024'}}  renderTabBar={()=> <ScrollableTab />}>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="BinaryTV">
-                <ActivityIndicator
-                size="large"
-                color="black"
-                />
+                <Container>
+                    <Content>
+                        <List>
+                            <ListItem noBorder>
+                                <Button block binary><Text> Success </Text></Button>
+                            </ListItem >
+                            <ListItem noBorder>
+                                <Card>
+                                <CardItem>
+                                    <Icon active name="logo-googleplus" />
+                                    <Text>Google Plus</Text>
+                                    <Right>
+                                        <Icon name="arrow-forward" />
+                                    </Right>
+                                    </CardItem>
+                                </Card>
+                            </ListItem>
+                            <ListItem noBorder>
+                                <Card>
+                                <CardItem>
+                                    <Icon active name="logo-googleplus" />
+                                    <Text>Google Plus</Text>
+                                    <Right>
+                                        <Icon name="arrow-forward" />
+                                    </Right>
+                                    </CardItem>
+                                </Card>
+                            </ListItem>
+                            <ListItem noBorder>
+                                <Card>
+                                <CardItem>
+                                    <Icon active name="logo-googleplus" />
+                                    <Text>Google Plus</Text>
+                                    <Right>
+                                        <Icon name="arrow-forward" />
+                                    </Right>
+                                    </CardItem>
+                                </Card>
+                            </ListItem>
+                            <ListItem noBorder>
+                                <Card>
+                                <CardItem>
+                                    <Icon active name="logo-googleplus" />
+                                    <Text>Google Plus</Text>
+                                    <Right>
+                                        <Icon name="arrow-forward" />
+                                    </Right>
+                                    </CardItem>
+                                </Card>
+                            </ListItem>
+                            <ListItem noBorder>
+                                <Card>
+                                <CardItem>
+                                    <Icon active name="logo-googleplus" />
+                                    <Text>Google Plus</Text>
+                                    <Right>
+                                        <Icon name="arrow-forward" />
+                                    </Right>
+                                    </CardItem>
+                                </Card>
+                            </ListItem>
+                            <ListItem noBorder>
+                                <Card>
+                                <CardItem>
+                                    <Icon active name="logo-googleplus" />
+                                    <Text>Google Plus</Text>
+                                    <Right>
+                                        <Icon name="arrow-forward" />
+                                    </Right>
+                                    </CardItem>
+                                </Card>
+                            </ListItem>
+                            <ListItem noBorder>
+                                <Card>
+                                <CardItem>
+                                    <Icon active name="logo-googleplus" />
+                                    <Text>Google Plus</Text>
+                                    <Right>
+                                        <Icon name="arrow-forward" />
+                                    </Right>
+                                    </CardItem>
+                                </Card>
+                            </ListItem>
+                        </List>
+                    </Content>
+                </Container>
             </Tab>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Commodities Corner">
-                <Text> asdasd </Text>
+                <Container>
+                    <Content>
+                        <Button block binary><Text> Success </Text></Button>
+                        <Card>
+                        <CardItem>
+                            <Icon active name="logo-googleplus" />
+                            <Text>Google Plus</Text>
+                            <Right>
+                                <Icon name="arrow-forward" />
+                            </Right>
+                            </CardItem>
+                        </Card>
+                        <Card>
+                        <CardItem>
+                            <Icon active name="logo-googleplus" />
+                            <Text>Google Plus</Text>
+                            <Right>
+                                <Icon name="arrow-forward" />
+                            </Right>
+                            </CardItem>
+                        </Card>
+                    </Content>
+                </Container>
             </Tab>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Webinars">
                 <Text> asdasd </Text>
@@ -48,22 +156,3 @@ const Videos = (props) => {
 }
 
 export default Videos
-
-/*
-        <Tabs tabBarUnderlineStyle={{backgroundColor: '#e98024'}}  renderTabBar={()=> <ScrollableTab />}>
-            <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="BinaryTV">
-                <ActivityIndicator
-                size="large"
-                color="black"
-                />
-            </Tab>
-            <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Commodities Corner">
-            </Tab>
-            <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Webinars">
-            </Tab>
-            <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="How To Use Binary.com">
-            </Tab>
-            <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Weekly Trading Signals">
-            </Tab>
-        </Tabs>
-*/

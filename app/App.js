@@ -16,6 +16,7 @@ import Toast from 'react-native-simple-toast';
 import { Provider } from 'react-redux';
 import { connect } from 'react-redux';
 import FootSectionNavigatorContainer from './containers/FootSectionNavigatorContainer.js'
+import RootNav from './components/navigators/rootNavigator/RootNav.js'
 import store from './store/store.js';
 import getTheme from './../theme/components'
 import commonColor from './../theme/variables/commonColor';
@@ -42,7 +43,7 @@ export default class App extends Component{
             <Provider store={store}>
                 <StyleProvider style={getTheme(commonColor)}>
                     <Container>
-                        <FootSectionNavigatorContainer />
+                        <RootNav />
                     </Container>
                 </StyleProvider>
             </Provider>

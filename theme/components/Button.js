@@ -25,6 +25,20 @@ export default (variables = variable) => {
           borderColor: '#000',
           borderWidth: variables.borderWidth * 2,
         },
+        '.binary': {
+          'NativeBase.Text': {
+            color: '#ffffff',
+          },
+          'NativeBase.Icon': {
+            color: '#ffffff',
+          },
+          'NativeBase.IconNB': {
+            color: '#ffffff',
+          },
+          backgroundColor: '#2E8836',
+          borderColor: '#2E8836',
+          borderWidth: variables.borderWidth * 2,
+        },
         '.light': {
           'NativeBase.Text': {
             color: '#f4f4f4',
@@ -380,6 +394,19 @@ export default (variables = variable) => {
         },
 
 
+      },
+
+      '.binary': {
+        'NativeBase.Text': {
+          color: '#ffffff',
+        },
+        'NativeBase.Icon': {
+          color: '#ffffff',
+        },
+        'NativeBase.IconNB': {
+          color: '#ffffff',
+        },
+        backgroundColor: '#2E8836'
       },
 
       '.small': {

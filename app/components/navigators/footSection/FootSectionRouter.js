@@ -6,7 +6,6 @@ import {
     addNavigationHelpers
 } from 'react-navigation';
 
-import store from './../../../store/store.js'
 import FootSectionNav from './FootSectionNav.js'
 
 export default class FootSectionRouter extends Component{
@@ -16,7 +15,7 @@ export default class FootSectionRouter extends Component{
 
     render() {
         return (
-            <FootSectionNav ref={ref => this.navigation = ref } navigation={addNavigationHelpers({
+            <FootSectionNav navigation={addNavigationHelpers({
                 dispatch: this.props.dispatch,
                 state: this.props.nav})}/>
         );
