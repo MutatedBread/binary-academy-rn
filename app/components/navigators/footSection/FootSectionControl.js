@@ -18,7 +18,7 @@ export default class FootSectionControl extends Component{
                         <Text>News</Text>
                     </Button>
                     <Button onPress={this.props.selectVideos} ref={(ref) => this.videosButton = ref} active={this.props.selectedTab==='VIDEOS'}>
-                        <Icon ios="ios-play" android="md-play" />
+                        <Icon ios="ios-videocam" android="md-videocam" />
                         <Text>Videos</Text>
                     </Button>
                     <Button onPress={this.props.selectOthers} ref={(ref) => this.othersButton = ref} active={this.props.selectedTab==='OTHERS'}>

@@ -7,14 +7,15 @@ import {
 var YoutubeAPIKey = require('./YoutubeAPIKey.js');
 var YoutubeFetchStatus = require('./YoutubeFetchStatus.js');
 
-export default class YoutubeFetch{
-    constructor(playlistId) {
-        if(isPhone()) {
+class YoutubeFetch{
+    constructor(playlist_id) {
+        if(this.isIphone()) {
             this.APIkey = YoutubeAPIKey.ios;
-        }else{
+        }
+        if(this.isAndroid()) {
             this.APIkey = YoutubeAPIKey.android;
         };
-        this.playlistId = playlistId;
+        this.playlistId = playlist_id;
         this.previousPageToken= '';
         this.nextPageToken= '';
         this.pageNum= 0;
@@ -62,17 +63,46 @@ export default class YoutubeFetch{
         return this.generateLink() + "&" + this.generateNextToken();
     };
     generateBoiletPlate = () => {
-        return "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetail&maxResults=10";
+        return "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=15";
     }
-    getPlaylistDetails = (status) => {
+    getPlaylistDetails = async(status) => {
+        let link = "";
         switch(status) {
             case YoutubeFetchStatus.NEW:
-            break;
+                link = this.generateLink();
+                break;
             case YoutubeFetchStatus.NEXT_PAGE:
-            break;
+                if(this.nextPageToken){
+                    link = this.generateNextLink();
+                }
+                break;
             case YoutubeFetchStatus.PREVIOUS_PAGE:
-            break;
+                if(this.previousPageToken){
+                    link = this.generatePreviousLink();
+                }
+                break;
+        }
+        if(!link) {
+            return "ERROR : no more pages to load.";
+        }
+        let respond = await fetch(link, {method: 'GET'});
+        let respondJson = await respond.json();
+        this.detailsPopulatePageTokens(await respondJson);
+        return respondJson;
+    };
+    detailsPopulatePageTokens = (obj) => {
+        if(obj.prevPageToken) {
+            this.previousPageToken = obj.prevPageToken;
+        } else {
+            this.previousPageToken = "";
+        }
+        if(obj.nextPageToken) {
+            this.nextPageToken = obj.nextPageToken;
+        } else {
+            this.nextPageToken = "";
         }
     };
+    
 }
-//https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=PLVJJAiu3lRjYz1XO_yoyIRxgz5zBlQc-g&maxResults=10&key=AIzaSyCJ6yl3RwdjeGHK1qIIfOlduTCsy9T2c98
+
+module.exports = YoutubeFetch;

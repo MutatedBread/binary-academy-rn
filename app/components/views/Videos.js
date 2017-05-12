@@ -19,6 +19,9 @@ import {
     ListItem,
 } from 'native-base'
 
+import VideoList from './videoTabs/VideoList.js'
+var YoutubePlaylistId = require('./../YoutubeAPI/YoutubePlaylistId.js');
+
 const Videos = (props) => {
    return (
     <Container>
@@ -29,6 +32,28 @@ const Videos = (props) => {
         </Header>
         <Tabs tabBarUnderlineStyle={{backgroundColor: '#e98024'}}  renderTabBar={()=> <ScrollableTab />}>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="BinaryTV">
+                <VideoList playlistId={YoutubePlaylistId.binary_tv} />
+            </Tab>
+            <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Commodities Corner">
+                <VideoList playlistId={YoutubePlaylistId.commodities_corner} />
+            </Tab>
+            <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Webinars">
+                <VideoList playlistId={YoutubePlaylistId.webinars} />
+            </Tab>
+            <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="How To Use Binary.com">
+                <VideoList playlistId={YoutubePlaylistId.how_to_use_binary_dot_com} />
+            </Tab>
+            <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Weekly Trading Signals">
+                <VideoList playlistId={YoutubePlaylistId.weekly_trading_signals} />
+            </Tab>
+        </Tabs>
+    </Container>
+   )
+}
+
+export default Videos
+
+/*
                 <Container>
                     <Content>
                         <List>
@@ -115,44 +140,4 @@ const Videos = (props) => {
                         </List>
                     </Content>
                 </Container>
-            </Tab>
-            <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Commodities Corner">
-                <Container>
-                    <Content>
-                        <Button block binary><Text> Success </Text></Button>
-                        <Card>
-                        <CardItem>
-                            <Icon active name="logo-googleplus" />
-                            <Text>Google Plus</Text>
-                            <Right>
-                                <Icon name="arrow-forward" />
-                            </Right>
-                            </CardItem>
-                        </Card>
-                        <Card>
-                        <CardItem>
-                            <Icon active name="logo-googleplus" />
-                            <Text>Google Plus</Text>
-                            <Right>
-                                <Icon name="arrow-forward" />
-                            </Right>
-                            </CardItem>
-                        </Card>
-                    </Content>
-                </Container>
-            </Tab>
-            <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Webinars">
-                <Text> asdasd </Text>
-            </Tab>
-            <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="How To Use Binary.com">
-                <Text> asdasd </Text>
-            </Tab>
-            <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Weekly Trading Signals">
-                <Text> asdasd </Text>
-            </Tab>
-        </Tabs>
-    </Container>
-   )
-}
-
-export default Videos
+*/

@@ -8,21 +8,51 @@ import {
     Left,
     Right,
     Body,
-    Button
+    Button,
+    Thumbnail,
+    Text,
+    Icon
 } from 'native-base';
 
-export default class VideoList extends Components {
+var YoutubeFetch = require('./../../YoutubeAPI/YoutubeFetch.js');
+var YoutubeFetchStatus = require('./../../YoutubeAPI/YoutubeFetchStatus.js');
+
+export default class VideoList extends Component {
     constructor(props) {
         super(props);
-    };
+        this.youtubeFetch = new YoutubeFetch(this.props.playlistId);
+        this.refreshView = false;
+        this.state={
+            videosArray: []
+        }
+    }
+
+    async componentWillMount() {
+        let json = await this.youtubeFetch.getPlaylistDetails(YoutubeFetchStatus.NEW);
+        console.log(json);
+        this.videosArray = Object.values(await json.items);
+        this.setState({videosArray:this.videosArray});
+    }
 
     render() {
+        console.log("ASD");
+        console.log(this.state.videosArray);
         return (
             <List 
-                dataArray={}
-                renderRow={() => {
-
-                }}>
+                dataArray={this.state.videosArray}
+                renderRow={(video) => 
+                    <ListItem>
+                        <Thumbnail square size={300} source={{uri: video.snippet.thumbnails.standard.url}} />
+                        <Body>
+                            <Text>{video.snippet.title}</Text>
+                        </Body>
+                        <Right>
+                            <Button block binary>
+                                <Icon ios="ios-play" android="md-play" />
+                            </Button>
+                        </Right>
+                    </ListItem>
+                }>
             </List>
         );
     }''
