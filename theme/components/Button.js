@@ -27,15 +27,15 @@ export default (variables = variable) => {
         },
         '.binary': {
           'NativeBase.Text': {
-            color: '#ffffff',
+            color: '#2E8836',
           },
           'NativeBase.Icon': {
-            color: '#ffffff',
+            color: '#2E8836',
           },
           'NativeBase.IconNB': {
-            color: '#ffffff',
+            color: '#2E8836',
           },
-          backgroundColor: '#2E8836',
+          backgroundColor: 'transparent',
           borderColor: '#2E8836',
           borderWidth: variables.borderWidth * 2,
         },
@@ -290,6 +290,13 @@ export default (variables = variable) => {
         borderRadius: variables.borderRadiusLarge,
       },
 
+      '.circle': {
+        paddingHorizontal: variables.buttonPadding + 1,
+        justifyContent:'center',
+        width:40,
+        height:40,
+        borderRadius:40,
+      },
 
       '.transparent': {
         backgroundColor: 'transparent',
@@ -392,8 +399,19 @@ export default (variables = variable) => {
           },
           backgroundColor: null,
         },
-
-
+        '.binary': {
+          'NativeBase.Text': {
+            color: '#2E8836',
+          },
+          'NativeBase.Icon': {
+            color: '#2E8836',
+          },
+          'NativeBase.IconNB': {
+            color: '#2E8836',
+          },
+          borderColor: '#2E8836',
+          backgroundColor: null,
+        },
       },
 
       '.binary': {

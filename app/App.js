@@ -33,7 +33,6 @@ export default class App extends Component{
                     this.backButtonPressed = false;
                 }, 1500);
             }else{
-                store.dispatch({type: 'NEWS'});
                 BackHandler.exitApp();
             }
             return true;

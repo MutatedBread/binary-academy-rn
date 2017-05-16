@@ -64,8 +64,8 @@ class YoutubeFetch{
     };
     generateBoiletPlate = () => {
         return "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=15";
-    }
-    getPlaylistDetails = async(status) => {
+    };
+    getPlaylistDetails = async (status) => {
         let link = "";
         switch(status) {
             case YoutubeFetchStatus.NEW:
@@ -102,7 +102,9 @@ class YoutubeFetch{
             this.nextPageToken = "";
         }
     };
-    
+    hasNextPage = () => {
+        return this.nextPageToken != '';
+    }
 }
 
 module.exports = YoutubeFetch;

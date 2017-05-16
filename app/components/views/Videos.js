@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 import {
     Container,
@@ -17,9 +17,15 @@ import {
     Content,
     List,
     ListItem,
-} from 'native-base'
+} from 'native-base';
 
-import VideoList from './videoTabs/VideoList.js'
+import VideoList from './videoTabs/VideoList.js';
+import BinaryTVContainer from './../../containers/BinaryTVContainer.js';
+import CommoditiesCornerContainer from './../../containers/CommoditiesCornerContainer.js';
+import HowToUseBinaryContainer from './../../containers/HowToUseBinaryContainer.js';
+import WebinarContainer from './../../containers/WebinarContainer.js';
+import WeeklyTradingSignalContainer from './../../containers/WeeklyTradingSignalContainer.js';
+
 var YoutubePlaylistId = require('./../YoutubeAPI/YoutubePlaylistId.js');
 
 const Videos = (props) => {
@@ -32,26 +38,26 @@ const Videos = (props) => {
         </Header>
         <Tabs tabBarUnderlineStyle={{backgroundColor: '#e98024'}}  renderTabBar={()=> <ScrollableTab />}>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="BinaryTV">
-                <VideoList playlistId={YoutubePlaylistId.binary_tv} />
+                <BinaryTVContainer />
             </Tab>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Commodities Corner">
-                <VideoList playlistId={YoutubePlaylistId.commodities_corner} />
+                <CommoditiesCornerContainer />
             </Tab>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Webinars">
-                <VideoList playlistId={YoutubePlaylistId.webinars} />
+                <HowToUseBinaryContainer />
             </Tab>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="How To Use Binary.com">
-                <VideoList playlistId={YoutubePlaylistId.how_to_use_binary_dot_com} />
+                <WebinarContainer />
             </Tab>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Weekly Trading Signals">
-                <VideoList playlistId={YoutubePlaylistId.weekly_trading_signals} />
+                <WeeklyTradingSignalContainer />
             </Tab>
         </Tabs>
     </Container>
    )
-}
+};
 
-export default Videos
+export default Videos;
 
 /*
                 <Container>

@@ -6,11 +6,11 @@ import store from './../store/store.js'
 
 const mapStateToProps = state => ({
   selectedTab: state.selectedTab
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
   selectNews: () => { 
-    if(store.getState().selectedTab != 'NEWS') {;
+    if(store.getState().selectedTab != 'NEWS') {
       dispatch({ type: 'NEWS' });
     };
   },
@@ -24,6 +24,6 @@ const mapDispatchToProps = (dispatch) => ({
       dispatch({ type: 'OTHERS' });
     }
   },
-})
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(FootSectionControl)
+export default connect(mapStateToProps, mapDispatchToProps)(FootSectionControl);
