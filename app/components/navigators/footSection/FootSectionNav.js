@@ -41,4 +41,4 @@ Others.navigationOptions = {
     tabBarVisible: false,
 }
 
-export default FootSectionNav
+export default FootSectionNav;

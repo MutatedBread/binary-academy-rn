@@ -4,25 +4,23 @@ import {
     StackNavigator
 } from 'react-navigation';
 
-import VideoViewer from './../../views/VideoViewer.js'
-import ArticleViewer from './../../views/ArticleViewer.js'
+import VideoViewerContainer from './../../../containers/VideoViewerContainer.js'
+import ArticleViewerContainer from './../../../containers/ArticleViewerContainer.js'
 import FootSectionNavigatorContainer from './../../../containers/FootSectionNavigatorContainer.js'
 
 const RootNav = StackNavigator({
     FootSectionNavigatorContainer: {
         screen: FootSectionNavigatorContainer
     },
-    VideoViewer : {
-        screen: VideoViewer
+    VideoViewerContainer : {
+        screen: VideoViewerContainer
     },
-    ArticleViewer : {
-        screen: ArticleViewer
+    ArticleViewerContainer : {
+        screen: ArticleViewerContainer
     },
 }, {
     initialRouteName: 'FootSectionNavigatorContainer',
     headerMode: 'none'
 });
-
-
 
 export default RootNav;

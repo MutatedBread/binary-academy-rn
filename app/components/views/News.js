@@ -4,6 +4,8 @@ import {
    ActivityIndicator
 } from 'react-native'
 
+import Barspinner from './../spinner/Barspinner.js';
+
 import {
     Container,
     Body,
@@ -23,12 +25,10 @@ const News = (props) => {
         </Header>
         <Tabs tabBarUnderlineStyle={{backgroundColor: '#e98024'}}>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="What's New">
-                <ActivityIndicator
-                size="large"
-                color="black"
-                />
+                <Barspinner />
             </Tab>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Daily Report">
+                <Barspinner />
             </Tab>
         </Tabs>
     </Container>

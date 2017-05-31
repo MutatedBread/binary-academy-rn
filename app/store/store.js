@@ -1,8 +1,11 @@
-import { createStore, combineReducers } from 'redux'
-import { NavigationActions } from 'react-navigation'
-import FootSectionNav from './../components/navigators/footSection/FootSectionNav.js'
+import { createStore, combineReducers } from 'redux';
+import { NavigationActions } from 'react-navigation';
+import FootSectionNav from './../components/navigators/footSection/FootSectionNav.js';
+import RootNav from './../components/navigators/rootNavigator/RootNav.js';
 
 const init = {
+  rootNav: RootNav.router.getStateForAction(RootNav.router.getActionForPathAndParams('FootSectionNavigatorContainer')),
+  currentView: 'VIEW_ROOT',
   selectedTab: 'NEWS',
   nav: FootSectionNav.router.getStateForAction(FootSectionNav.router.getActionForPathAndParams('NEWS')),
   video: {
@@ -27,6 +30,36 @@ const init = {
       videoArrayStore: [],
     },
   }
+}
+
+const rootNavReducer = (state = init.rootNav, action) => {
+  switch(action.type) {
+    case 'VIEW_ROOT':
+      return RootNav.router.getStateForAction(NavigationActions.back(), state);
+      break;
+    case 'VIEW_ARTICLE':
+      return RootNav.router.getStateForAction(NavigationActions.navigate({routeName: 'ArticleViewerContainer'}), state);
+      break;
+    case 'VIEW_VIDEO':
+      return RootNav.router.getStateForAction(NavigationActions.navigate({routeName: 'VideoViewerContainer', params: {videoId: action.videoId}}), state);
+      break;
+  }
+  return state;
+}
+
+const currentViewReducer = (state = init.currentView, action) => {
+  switch(action.type) {
+    case 'VIEW_ROOT':
+      return 'VIEW_ROOT';
+      break;
+    case 'VIEW_ARTICLE':
+      return 'VIEW_ARTICLE';
+      break;
+    case 'VIEW_VIDEO':
+      return 'VIEW_VIDEO';
+      break;
+  }
+  return state;
 }
 
 const selectedTabReducer = (state = init.selectedTab, action) => {
@@ -167,6 +200,8 @@ let videoReducer = combineReducers({
 });
 
 let appReducer = combineReducers({
+  rootNav: rootNavReducer,
+  currentView: currentViewReducer,
   nav: navReducer,
   selectedTab: selectedTabReducer,
   video: videoReducer

@@ -13,7 +13,7 @@ import {
 export default class VideoItem extends Component{
     render() {
         return (
-            <ListItem>
+            <ListItem onPress={() => this.props.onPress(this.props.video.videoId)}>
                 <Thumbnail square size={180} source={{uri: this.props.video.medium_img_url}} />
                 <Body>
                     <Text>{this.props.video.title}</Text>

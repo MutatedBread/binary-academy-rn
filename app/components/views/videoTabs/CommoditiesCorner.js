@@ -16,6 +16,7 @@ export default class CommoditiesCorner extends Component {
                 videoArrayStore={this.props.videoArrayStore}
                 loadingFunction={this.props.loading}
                 videoArrayUpdateFunction={this.props.updateVideoList}
+                viewVideo={this.props.viewVideo}
             />
         );
     }

@@ -13,8 +13,7 @@ import {
     Button,
     Thumbnail,
     Text,
-    Icon,
-    Spinner
+    Icon
 } from 'native-base';
 
 import Loading from './Loading.js'
@@ -63,7 +62,7 @@ export default class VideoList extends Component {
                             <List 
                                 dataArray={this.props.videoArrayStore}
                                 renderRow={(video) =>
-                                    <VideoItem video={video}/>
+                                    <VideoItem onPress={this.props.viewVideo} video={video}/>
                                 }
                                 renderFooter={() =>
                                     <ListItem center>

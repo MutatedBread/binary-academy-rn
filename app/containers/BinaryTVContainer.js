@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
 import BinaryTV from './../components/views/videoTabs/BinaryTV.js'
-import store from './../store/store.js'
 
 const mapStateToProps = state => ({
   isLoading: state.video.binaryTV.isLoading,
@@ -15,6 +14,9 @@ const mapDispatchToProps = (dispatch) => ({
     },
     updateVideoList: (array) => {
         dispatch({type: 'BINARYTV_UPDATE_VIDEOLIST', videosArray: array});
+    },
+    viewVideo: (videoId) => {
+        dispatch({type: 'VIEW_VIDEO', videoId: videoId});
     }
 });
 

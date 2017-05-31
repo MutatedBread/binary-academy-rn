@@ -15,7 +15,7 @@ export default class ArticleViewer extends Component{
             <Container>
                 <Header>
                     <Left>
-                        <Button transparent>
+                        <Button onPress={this.props.goBackToRoot}  transparent>
                             <Icon ios="ios-arrow-back" android="md-arrow-back" />
                         </Button>
                     </Left>

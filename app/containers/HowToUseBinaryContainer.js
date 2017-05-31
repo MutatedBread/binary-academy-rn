@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux'
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import HowToUseBinary from './../components/views/videoTabs/HowToUseBinary.js'
-import store from './../store/store.js'
+import HowToUseBinary from './../components/views/videoTabs/HowToUseBinary.js';
 
 const mapStateToProps = state => ({
   isLoading: state.video.howtousebinary.isLoading,
@@ -15,6 +14,9 @@ const mapDispatchToProps = (dispatch) => ({
     },
     updateVideoList: (array) => {
         dispatch({type: 'HOWTOUSEBINARY_UPDATE_VIDEOLIST', videosArray: array});
+    },
+    viewVideo: (videoId) => {
+        dispatch({type: 'VIEW_VIDEO', videoId: videoId});
     }
 });
 
