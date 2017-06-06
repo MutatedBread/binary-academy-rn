@@ -22,4 +22,5 @@ This app is created during my internship in the office as a side project, it was
 If you need explaination to clarify about anything in thie project, you are welcome to email me or raise an issue in this repo.
 
 Download source code : [here](https://github.com/MutatedBread/binary-academy-rn/releases/tag/v0.1-alpha)
+
 Download demo apk : [here](https://github.com/MutatedBread/binary-academy-rn/releases/download/v0.1-alpha/demo.apk)
