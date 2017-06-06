@@ -12,7 +12,7 @@ Make an app for Binary Academy using React Native
 
 ## App Feature
 1. Only Video section has content
-1.1 Youtube video loaded with fullscreen webview which disables additional url navigation.
+... Youtube video loaded with fullscreen webview which disables additional url navigation.
 2. Binary Spinner
 3. And more to implement !
 
