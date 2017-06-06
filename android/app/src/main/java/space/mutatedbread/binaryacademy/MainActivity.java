@@ -1,4 +1,4 @@
-package com.bananapedia;
+package space.mutatedbread.binaryacademy;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "bananapedia";
+        return "binaryacademy";
     }
 }

@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "bananapedia-tvOS.app"
-               BlueprintName = "bananapedia-tvOS"
-               ReferencedContainer = "container:bananapedia.xcodeproj">
+               BuildableName = "binaryacademy-tvOS.app"
+               BlueprintName = "binaryacademy-tvOS"
+               ReferencedContainer = "container:binaryacademy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "bananapedia-tvOSTests.xctest"
-               BlueprintName = "bananapedia-tvOSTests"
-               ReferencedContainer = "container:bananapedia.xcodeproj">
+               BuildableName = "binaryacademy-tvOSTests.xctest"
+               BlueprintName = "binaryacademy-tvOSTests"
+               ReferencedContainer = "container:binaryacademy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "bananapedia-tvOSTests.xctest"
-               BlueprintName = "bananapedia-tvOSTests"
-               ReferencedContainer = "container:bananapedia.xcodeproj">
+               BuildableName = "binaryacademy-tvOSTests.xctest"
+               BlueprintName = "binaryacademy-tvOSTests"
+               ReferencedContainer = "container:binaryacademy.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "bananapedia-tvOS.app"
-            BlueprintName = "bananapedia-tvOS"
-            ReferencedContainer = "container:bananapedia.xcodeproj">
+            BuildableName = "binaryacademy-tvOS.app"
+            BlueprintName = "binaryacademy-tvOS"
+            ReferencedContainer = "container:binaryacademy.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "bananapedia-tvOS.app"
-            BlueprintName = "bananapedia-tvOS"
-            ReferencedContainer = "container:bananapedia.xcodeproj">
+            BuildableName = "binaryacademy-tvOS.app"
+            BlueprintName = "binaryacademy-tvOS"
+            ReferencedContainer = "container:binaryacademy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "bananapedia-tvOS.app"
-            BlueprintName = "bananapedia-tvOS"
-            ReferencedContainer = "container:bananapedia.xcodeproj">
+            BuildableName = "binaryacademy-tvOS.app"
+            BlueprintName = "binaryacademy-tvOS"
+            ReferencedContainer = "container:binaryacademy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
