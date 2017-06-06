@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 
 import {
-   ActivityIndicator
+    ActivityIndicator,
+    StyleSheet   
 } from 'react-native'
+
+import Barspinner from './../spinner/Barspinner.js';
 
 import {
     Container,
@@ -10,7 +13,7 @@ import {
     Title,
     Header,
     Tabs,
-    Tab
+    Tab,
 } from 'native-base'
 
 const News = (props) => {
@@ -23,16 +26,23 @@ const News = (props) => {
         </Header>
         <Tabs tabBarUnderlineStyle={{backgroundColor: '#e98024'}}>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="What's New">
-                <ActivityIndicator
-                size="large"
-                color="black"
-                />
+                <Barspinner style={styles.spinner}/>
             </Tab>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Daily Report">
+                <Barspinner style={styles.spinner}/>
             </Tab>
         </Tabs>
     </Container>
    )
 }
+
+let styles = StyleSheet.create({
+    spinner: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        flex: 1,
+        top: 40,
+    }
+})
 
 export default News

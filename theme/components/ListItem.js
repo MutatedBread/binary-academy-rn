@@ -389,6 +389,10 @@ export default (variables = variable) => {
       '.noBorder': {
         borderBottomWidth: null,
       },
+      '.center': {
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
       alignItems: 'center',
       flexDirection: 'row',
       paddingRight: variables.listItemPadding + 5,

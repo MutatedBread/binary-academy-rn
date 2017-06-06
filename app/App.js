@@ -15,7 +15,7 @@ import Toast from 'react-native-simple-toast';
 
 import { Provider } from 'react-redux';
 import { connect } from 'react-redux';
-import FootSectionNavigatorContainer from './containers/FootSectionNavigatorContainer.js'
+import RootNavigatorContainer from './containers/RootNavigatorContainer.js'
 import store from './store/store.js';
 import getTheme from './../theme/components'
 import commonColor from './../theme/variables/commonColor';
@@ -25,14 +25,16 @@ export default class App extends Component{
         var backButtonPressed = false;
 
         BackHandler.addEventListener('hardwareBackPress', () => {
-            if(!this.backButtonPressed){
+            if(store.getState().currentView != 'VIEW_ROOT') {
+                store.dispatch({type: 'VIEW_ROOT'});
+            }
+            else if(!this.backButtonPressed){
                 Toast.show("Press back once more to exit the app.", 1500);
                 this.backButtonPressed = true;
                 setTimeout(() => {
                     this.backButtonPressed = false;
                 }, 1500);
             }else{
-                store.dispatch({type: 'NEWS'});
                 BackHandler.exitApp();
             }
             return true;
@@ -42,7 +44,7 @@ export default class App extends Component{
             <Provider store={store}>
                 <StyleProvider style={getTheme(commonColor)}>
                     <Container>
-                        <FootSectionNavigatorContainer />
+                        <RootNavigatorContainer />
                     </Container>
                 </StyleProvider>
             </Provider>

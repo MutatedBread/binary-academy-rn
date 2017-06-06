@@ -5,12 +5,24 @@ import FootSectionControl from './../components/navigators/footSection/FootSecti
 
 const mapStateToProps = state => ({
   selectedTab: state.selectedTab
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
-  selectNews: () => { dispatch({ type: 'NEWS' }) },
-  selectVideos: () => { dispatch({ type: 'VIDEOS' }) },
-  selectOthers: () => { dispatch({ type: 'OTHERS' }) },
-})
+  selectNews: (previousTab) => { 
+    if(previousTab != 'NEWS') {
+      dispatch({ type: 'NEWS' });
+    };
+  },
+  selectVideos: (previousTab) => { 
+    if(previousTab != 'VIDEOS') {
+      dispatch({ type: 'VIDEOS' });
+    };
+  },
+  selectOthers: (previousTab) => { 
+    if(previousTab != 'OTHERS') {
+      dispatch({ type: 'OTHERS' });
+    }
+  },
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(FootSectionControl)
+export default connect(mapStateToProps, mapDispatchToProps)(FootSectionControl);

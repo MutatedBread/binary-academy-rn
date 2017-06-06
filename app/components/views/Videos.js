@@ -1,19 +1,32 @@
-import React, { Component } from 'react'
-
-import {
-   ActivityIndicator
-} from 'react-native'
+import React, { Component } from 'react';
 
 import {
     Container,
     Body,
+    Right,
     Title,
     Header,
     Tabs,
     Tab,
     ScrollableTab,
-    Text
-} from 'native-base'
+    Text,
+    Button,
+    Card,
+    Icon,
+    CardItem,
+    Content,
+    List,
+    ListItem,
+} from 'native-base';
+
+import VideoList from './videoTabs/VideoList.js';
+import BinaryTVContainer from './../../containers/BinaryTVContainer.js';
+import CommoditiesCornerContainer from './../../containers/CommoditiesCornerContainer.js';
+import HowToUseBinaryContainer from './../../containers/HowToUseBinaryContainer.js';
+import WebinarContainer from './../../containers/WebinarContainer.js';
+import WeeklyTradingSignalContainer from './../../containers/WeeklyTradingSignalContainer.js';
+
+var YoutubePlaylistId = require('./../YoutubeAPI/YoutubePlaylistId.js');
 
 const Videos = (props) => {
    return (
@@ -25,45 +38,23 @@ const Videos = (props) => {
         </Header>
         <Tabs tabBarUnderlineStyle={{backgroundColor: '#e98024'}}  renderTabBar={()=> <ScrollableTab />}>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="BinaryTV">
-                <ActivityIndicator
-                size="large"
-                color="black"
-                />
+                <BinaryTVContainer />
             </Tab>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Commodities Corner">
-                <Text> asdasd </Text>
+                <CommoditiesCornerContainer />
             </Tab>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Webinars">
-                <Text> asdasd </Text>
+                <WebinarContainer />
             </Tab>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="How To Use Binary.com">
-                <Text> asdasd </Text>
+                <HowToUseBinaryContainer />
             </Tab>
             <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Weekly Trading Signals">
-                <Text> asdasd </Text>
+                <WeeklyTradingSignalContainer />
             </Tab>
         </Tabs>
     </Container>
    )
-}
+};
 
-export default Videos
-
-/*
-        <Tabs tabBarUnderlineStyle={{backgroundColor: '#e98024'}}  renderTabBar={()=> <ScrollableTab />}>
-            <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="BinaryTV">
-                <ActivityIndicator
-                size="large"
-                color="black"
-                />
-            </Tab>
-            <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Commodities Corner">
-            </Tab>
-            <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Webinars">
-            </Tab>
-            <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="How To Use Binary.com">
-            </Tab>
-            <Tab tabStyle={{backgroundColor: '#2a3052'}} activeTabStyle={{backgroundColor: '#2a3052'}} activeTextStyle={{color: '#e98024'}} textStyle={{color: 'white'}} heading="Weekly Trading Signals">
-            </Tab>
-        </Tabs>
-*/
+export default Videos;
