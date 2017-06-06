@@ -13,11 +13,6 @@ export default class AnimRect extends Component {
 
         this.STRETCH_MIN_FACTOR = 1;
         this.STRETCH_MAX_FACTOR = 2;
-
-        this.STRETCH_MIN_SIZE = 20;
-        this.STRETCH_MAX_SIZE = 40;
-        this.Y_MIN = this.STRETCH_MAX_SIZE / 4;
-        this.Y_MAX = 0;
         
         this.ANIMATION_TIME = 1200;
         this.STRETCH_TIME = this.ANIMATION_TIME * 0.2;
@@ -29,50 +24,29 @@ export default class AnimRect extends Component {
         this.loopMoreThanOnce = false;
         this.state = {
             heightAnim: new Animated.Value(this.STRETCH_MIN_FACTOR),
-            yLocation: new Animated.Value(this.Y_MIN),
         }
     }
     
     animation = () => {
         Animated.sequence([
             Animated.delay(this.INITIAL_DELAY_TIME),
-            Animated.parallel([
-                Animated.timing(
-                    this.state.heightAnim, {
-                        easing: Easing.bezier(0.42,0,0.58,1),
-                        toValue: this.STRETCH_MAX_FACTOR,
-                        duration: this.STRETCH_TIME,
-                        useNativeDriver: true,
-                    }
-                ),
-                Animated.timing(
-                    this.state.yLocation, {
-                        easing: Easing.bezier(0.42,0,0.58,1),
-                        toValue: this.Y_MAX,
-                        duration: this.STRETCH_TIME,
-                        useNativeDriver: true,
-                    }
-                ),
-            ]),
-            Animated.parallel([
-                Animated.timing(
-                    this.state.heightAnim, {
-                        easing: Easing.bezier(0.42,0,0.58,1),
-                        toValue: this.STRETCH_MIN_FACTOR,
-                        duration: this.SHRINK_TIME,
-                        useNativeDriver: true,
-                    }
-                ),
-                Animated.timing(
-                    this.state.yLocation, {
-                        easing: Easing.bezier(0.42,0,0.58,1),
-                        toValue: this.Y_MIN,
-                        duration: this.SHRINK_TIME,
-                        useNativeDriver: true,
-                    }
-                ),
-                Animated.delay(this.DELAY_TIME)
-            ]),
+            Animated.timing(
+                this.state.heightAnim, {
+                    easing: Easing.bezier(0.42,0,0.58,1),
+                    toValue: this.STRETCH_MAX_FACTOR,
+                    duration: this.STRETCH_TIME,
+                    useNativeDriver: true,
+                }
+            ),
+            Animated.timing(
+                this.state.heightAnim, {
+                    easing: Easing.bezier(0.42,0,0.58,1),
+                    toValue: this.STRETCH_MIN_FACTOR,
+                    duration: this.SHRINK_TIME,
+                    useNativeDriver: true,
+                }
+            ),
+            Animated.delay(this.DELAY_TIME)
         ]).start((event) => {
             if(event.finished) {
                 this.loopMoreThanOnce = true;
@@ -99,16 +73,3 @@ export default class AnimRect extends Component {
         );
     }
 };
-
-let styles = StyleSheet.create({
-    rect: {
-        backgroundColor: '#2a3052',
-        borderStyle: 'solid',
-        borderRadius: 5,
-        width: 9,
-        zIndex: 100,
-        position: 'absolute',
-        top: 100,
-        left: 100,
-    }
-});

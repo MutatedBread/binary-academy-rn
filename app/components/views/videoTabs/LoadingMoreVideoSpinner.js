@@ -9,6 +9,9 @@ export default class Loading extends Component {
                 flex: 1,
                 alignItems: 'center',             
                 position: 'absolute',
+                left: 0,
+                right: 0,
+                top: 20,
             }} />
         );
     };

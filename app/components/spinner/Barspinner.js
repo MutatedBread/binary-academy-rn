@@ -41,11 +41,11 @@ export default class Barspinner extends Component {
         return(
             <View style={this.props.style}>
                 <View style={styles.flexBox}>
-                    <AnimRect initialDelayTime={100} ref={(ref) => {this.rect1 = ref;}}></AnimRect>
-                    <AnimRect initialDelayTime={200} ref={(ref) => {this.rect2 = ref;}}></AnimRect>
-                    <AnimRect initialDelayTime={300} ref={(ref) => {this.rect3 = ref;}}></AnimRect>
-                    <AnimRect initialDelayTime={400} ref={(ref) => {this.rect4 = ref;}}></AnimRect>
-                    <AnimRect initialDelayTime={500} ref={(ref) => {this.rect5 = ref;}}></AnimRect>
+                    <AnimRect initialDelayTime={1} ref={(ref) => {this.rect1 = ref;}}></AnimRect>
+                    <AnimRect initialDelayTime={101} ref={(ref) => {this.rect2 = ref;}}></AnimRect>
+                    <AnimRect initialDelayTime={201} ref={(ref) => {this.rect3 = ref;}}></AnimRect>
+                    <AnimRect initialDelayTime={301} ref={(ref) => {this.rect4 = ref;}}></AnimRect>
+                    <AnimRect initialDelayTime={401} ref={(ref) => {this.rect5 = ref;}}></AnimRect>
                 </View>
             </View>
         );

@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 
 import {
     Container,
-    Body,
     Text
 } from 'native-base';
 
 import {
-    StyleSheet
+    StyleSheet,
+    View
 } from 'react-native';
 
 import Barspinner from './../../spinner/Barspinner.js'
@@ -15,19 +15,23 @@ import Barspinner from './../../spinner/Barspinner.js'
 export default class Loading extends Component {
     render() {
         return (
-            <Body>
-                <Barspinner />
+            <View style={styles.container}>
+                <Barspinner/>
                 <Text> Loading </Text>
-            </Body>
+            </View>
         );
     };
 };
 
 let styles = StyleSheet.create({
-    loading: {
-
+    container: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 50,
     },
-    text: {
-
-    }
 });
