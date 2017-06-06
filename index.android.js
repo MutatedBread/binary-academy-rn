@@ -9,7 +9,7 @@ import { AppRegistry, ActivityIndicator, View, StyleSheet, Navigator} from 'reac
 import { Container, Text, Drawer, Content, Footer, FooterTab, Header, Title, Button, Left, Right, Body, Icon, Tabs, Tab, StyleProvider } from 'native-base';
 import getTheme from './theme/components'
 import commonColor from './theme/variables/commonColor';
-export default class bananapedia extends Component {
+export default class binaryacademy extends Component {
 
     constructor(props){
         super(props);
@@ -147,12 +147,12 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('bananapedia', () => bananapedia);
+AppRegistry.registerComponent('binaryacademy', () => binaryacademy);
 */
 import React, { Component } from 'react';
 import { AppRegistry } from 'react-native';
 import App from './app/App.js'
-export default class bananapedia extends Component {
+export default class binaryacademy extends Component {
 
     constructor(props){
         super(props);
@@ -165,4 +165,4 @@ export default class bananapedia extends Component {
     };
 }
 
-AppRegistry.registerComponent('bananapedia', () => bananapedia);
+AppRegistry.registerComponent('binaryacademy', () => binaryacademy);

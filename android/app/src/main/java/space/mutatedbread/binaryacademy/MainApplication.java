@@ -1,4 +1,4 @@
-package com.bananapedia;
+package space.mutatedbread.binaryacademy;
 
 import android.app.Application;
 
